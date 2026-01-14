@@ -29,5 +29,7 @@ public class ActivRes_7_6 {
             System.out.println(hora.obtenerHora());
             hora.incrementaSegundo();
         }
+
+        sc.close();
     }
 }
