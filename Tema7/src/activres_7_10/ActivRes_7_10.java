@@ -20,5 +20,10 @@ public class ActivRes_7_10 {
 
         Locomotora locomotora1 = new Locomotora("AG-001", 50, 2004, mecanico1);
         Tren tren1 = new Tren(locomotora1, maquinista1);
+        
+        tren1.engancharVagon(1000, 100, "Patatas");
+        tren1.engancharVagon(1000, 970, "Personas");
+        tren1.engancharVagon(5000, 2500, "Avion");
+        
     }
 }
