@@ -10,15 +10,22 @@ package activaul_gestvehi;
  */
 public class Auto extends Vehiculo {
 
-    protected int numeroPuertas;
+    private int numeroPuertas;
 
-    public Auto(int numeroPuertas, String marca, String modelo, int year) {
-        super(marca, modelo, year);
+    public Auto(Propietario propietario, String marca, String modelo, int year, int numeroPuertas) {
+        super(propietario, marca, modelo, year);
         this.numeroPuertas = numeroPuertas;
     }
 
     @Override
     public double calcularImpuesto() {
-        return year * 0.05 * 100;
+        return getYear() * 0.05 * 100;
     }
+
+    @Override
+    public String toString() {
+        return super.toString() + "\nAuto{" + "numeroPuertas=" + numeroPuertas + ", impuestos=" + calcularImpuesto() + '}';
+    }
+
+    
 }

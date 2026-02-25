@@ -10,15 +10,22 @@ package activaul_gestvehi;
  */
 public class Camion extends Vehiculo {
 
-    protected int capacidadCarga; // En toneladas
+    protected int capacidadCarga; // En toneladas (T)
 
-    public Camion(int capacidadCarga, String marca, String modelo, int year) {
-        super(marca, modelo, year);
+    public Camion(Propietario propietario, String marca, String modelo, int year, int capacidadCarga) {
+        super(propietario, marca, modelo, year);
         this.capacidadCarga = capacidadCarga;
     }
 
     @Override
     public double calcularImpuesto() {
-        return year * 0.1 * 200;
+        return getYear() * 0.1 * 200;
     }
+
+    @Override
+    public String toString() {
+        return super.toString() + "\nCamion{" + "capacidadCarga=" + capacidadCarga +  ", impuestos=" + calcularImpuesto() + '}';
+    }
+
+    
 }
