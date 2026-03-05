@@ -13,7 +13,7 @@ public class Main {
         Coche coche1 = new Coche();
         Lancha lancha1 = new Lancha();
         VehiculoAnfibio anfibio1 = new VehiculoAnfibio(Modo.TIERRA);
-        
+
         coche1.arrancar();
         lancha1.flotar();
         
