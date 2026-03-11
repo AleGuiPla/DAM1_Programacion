@@ -23,6 +23,6 @@ public class Auto extends Vehiculo {
     
     @Override
     public String toString() {
-        return super.toString() + " Numero de puertas: " + numeroPuertas;
+        return super.toString() + " Numero de puertas: " + numeroPuertas + " Impuestos: " + calcularImpuesto();
     }
 }

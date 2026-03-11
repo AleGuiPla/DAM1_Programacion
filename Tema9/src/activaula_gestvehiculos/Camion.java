@@ -23,6 +23,6 @@ public class Camion extends Vehiculo {
     
     @Override
     public String toString() {
-        return super.toString() + " Capacidad de carga: " + capacidadCarga;
+        return super.toString() + " Capacidad de carga: " + capacidadCarga + " Impuestos: " + calcularImpuesto();
     }
 }
