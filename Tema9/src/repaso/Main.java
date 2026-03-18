@@ -16,13 +16,13 @@ public class Main {
         Dispositivo dispositivos[] = generarDispositivos(5);
 
         mostrarArray(dispositivos);
-        System.out.println("--------");
 
         dispositivos[3].setPrecio(300);
         dispositivos[4].setPrecio(300);
 
         Arrays.sort(dispositivos);
 
+        System.out.println("\n---------- Ordenado natural (precio y cuando igual marca) ----------");
         mostrarArray(dispositivos);
 
         System.out.println("--------");
@@ -30,10 +30,10 @@ public class Main {
         dispositivos[2].encender();
         dispositivos[2].usar();
         dispositivos[2].apagar();
-        System.out.println("--------");
 
         Arrays.sort(dispositivos, new ComparadorMarca());
 
+        System.out.println("\n---------- Ordenado por marca ----------");
         mostrarArray(dispositivos);
         System.out.println("--------");
 
