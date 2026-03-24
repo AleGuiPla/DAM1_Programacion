@@ -29,10 +29,12 @@ public class Main {
             num = sc.nextInt();
         }
 
-        for (int i = 0; i < listaNumeros.size(); i += 2) {
-            int n = listaNumeros.get(i);
-            System.out.println("El número en el índice " + i + " es " + n);
-            listaNumeros.set(i, listaNumeros.get(i) * 100);
+        for (int i = 0; i < listaNumeros.size(); i++) {
+            if (listaNumeros.get(i) % 2 == 0) {
+                int n = listaNumeros.get(i);
+                System.out.println("El número en el índice " + i + " es " + n);
+                listaNumeros.set(i, listaNumeros.get(i) * 100);
+            }
         }
 
         System.out.println(listaNumeros);
