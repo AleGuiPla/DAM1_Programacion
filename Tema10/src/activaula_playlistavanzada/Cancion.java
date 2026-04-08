@@ -27,8 +27,8 @@ public class Cancion implements Comparable<Cancion> {
     }
 
     @Override
-    public int compareTo(Cancion c) {
-        return titulo.compareToIgnoreCase(c.titulo);
+    public int hashCode() {
+        return Objects.hash(titulo, artista);
     }
 
     @Override
@@ -47,6 +47,15 @@ public class Cancion implements Comparable<Cancion> {
             return false;
         }
         return Objects.equals(this.artista, other.artista);
+    }
+
+    @Override
+    public int compareTo(Cancion c) {
+        int cmp = titulo.compareToIgnoreCase(c.titulo);
+        if (cmp == 0) {
+            return artista.compareToIgnoreCase(c.artista);
+        }
+        return cmp;
     }
 
     @Override

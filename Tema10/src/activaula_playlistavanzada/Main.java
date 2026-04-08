@@ -3,7 +3,11 @@ package activaula_playlistavanzada;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
+import java.util.Set;
 import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.LinkedHashSet;
+import java.util.TreeSet;
 
 public class Main {
 
@@ -50,6 +54,17 @@ public class Main {
         System.out.println("\nOrdenar lista por titulo (natural)");
         Collections.sort(playlist);
         mostrarColeccion(playlist);
+
+        Set<Cancion> playlistHashSet = new HashSet<>(playlist);
+        Set<Cancion> playlistLinkedHashSet = new LinkedHashSet<>(playlist);
+        Set<Cancion> playlistTreeSet = new TreeSet<>(playlist);
+
+        System.out.println("\n** HashSet **");
+        mostrarColeccion(playlistHashSet);
+        System.out.println("\n** LinkedHashSet **");
+        mostrarColeccion(playlistLinkedHashSet);
+        System.out.println("\n** TreeSet **");
+        mostrarColeccion(playlistTreeSet);
     }
 
     static void mostrarColeccion(Collection lista) {
