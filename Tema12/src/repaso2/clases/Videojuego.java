@@ -14,14 +14,22 @@ public class Videojuego implements Comparable<Videojuego> {
 
     private int codigo;
     private String titulo;
-    private float puntuacion;
+    private double puntuacion;
     private String genero;
 
     public Videojuego(int codigo, String titulo) {
         this(codigo, titulo, -1.0f, "DESCONOCIDO");
     }
+    
+    public Videojuego(int codigo, String titulo, double puntuacion) {
+        this(codigo, titulo, puntuacion, "DESCONOCIDO");
+    }
+    
+    public Videojuego(int codigo, String titulo, String genero) {
+        this(codigo, titulo, -1.0f, genero);
+    }
 
-    public Videojuego(int codigo, String titulo, float puntuacion, String genero) {
+    public Videojuego(int codigo, String titulo, double puntuacion, String genero) {
         this.codigo = codigo;
         this.titulo = titulo;
         this.puntuacion = puntuacion;
@@ -44,7 +52,7 @@ public class Videojuego implements Comparable<Videojuego> {
         this.titulo = titulo;
     }
 
-    public float getPuntuacion() {
+    public double getPuntuacion() {
         return puntuacion;
     }
 
@@ -59,10 +67,14 @@ public class Videojuego implements Comparable<Videojuego> {
     public void setGenero(String genero) {
         this.genero = genero;
     }
+    
+    public void incrementarPuntuacion(double valor) {
+        this.puntuacion += valor;
+    }
 
     @Override
     public int hashCode() {
-        return Objects.hashCode(codigo);
+        return Objects.hash(codigo);
     }
 
     @Override
@@ -83,5 +95,10 @@ public class Videojuego implements Comparable<Videojuego> {
     @Override
     public int compareTo(Videojuego v) {
         return this.codigo - v.codigo;
-    } 
+    }
+
+    @Override
+    public String toString() {
+        return "CODIGO=" + codigo + " TITULO=" + titulo + " PUNTUACION=" + puntuacion + " GENERO=" + genero;
+    }
 }
