@@ -40,7 +40,7 @@ public class Main {
                 case 3 ->
                     System.out.println("Dar de baja cliente");
                 case 4 ->
-                    mostrarClientes(clientes);
+                    mostrarClientes(clientes);  
                 case 5 -> {
                     guardarClientes(clientes);
                     System.out.println("Hasta pronto :)");
